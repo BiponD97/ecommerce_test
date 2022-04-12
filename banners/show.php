@@ -2,10 +2,10 @@
 
 include_once($_SERVER['DOCUMENT_ROOT']."/ecommerce-b4/config.php");
 
-use App\Products;
+use App\Banners;
 
-$_products = new Products();
-$products = $_products->show();
+$_banners = new Banners();
+$banners = $_banners->show();
 
 
 ?>
@@ -31,19 +31,28 @@ $products = $_products->show();
                 <div class="col-5">
                     <dl>
                         <dt>ID</dt>
-                        <dd><?php echo $products['id']; ?></dd>
+                        <dd><?php echo $banners['id']; ?></dd>
                         <dt>Title</dt>
-                        <dd><?php echo $products['title']; ?></dd>
+                        <dd><?php echo $banners['title']; ?></dd>
+                        <dt>Link</dt>
+                        <dd><?php echo $banners['link']; ?></dd>
+                        <dt>Promotional Message</dt>
+                        <dd><?php echo $banners['promotional_message']; ?></dd>
+                        <dt>Html Banner</dt>
+                        <dd><?php echo $banners['html_banner']; ?></dd>
                         <dt>Is Active</dt>
-                        <dd><?= $products['is_active'] ? "Active" : "Deactivated";
+                        <dd><?= $banners['is_active'] ? "Active" : "Deactivated";
+                            ?></dd>
+                        <dt>Is Draft</dt>
+                        <dd><?= $banners['is_draft'] ? "Drafted" : "Not Draft";
                             ?></dd>
                         <dt>Created At</dt>
-                        <dd><?php echo $products['created_at']; ?></dd>
+                        <dd><?php echo $banners['created_at']; ?></dd>
                         <dt>Modified At At</dt>
-                        <dd><?php echo $products['modified_at']; ?></dd>
+                        <dd><?php echo $banners['modified_at']; ?></dd>
                         <dt>Picture</dt>
-                        <dd><?php echo $products['pictures']; ?>
-                            <p><img src="<?= $webroot; ?>uploads/<?= $products['pictures']; ?>" alt="" height="300" width="300"></p>
+                        <dd><?php echo $banners['pictures']; ?>
+                            <p><img src="<?= $webroot; ?>uploads/<?= $banners['pictures']; ?>" alt="" height="300" width="300"></p>
                         </dd>
                     </dl>
 

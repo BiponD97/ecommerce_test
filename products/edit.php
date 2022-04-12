@@ -34,7 +34,7 @@ $product = $_products->edit();
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-sm-6">
-          <h1 class="text-center">Edit New</h1>
+          <h1 class="text-center">Edit</h1>
           <form method="post" action="update.php" enctype="multipart/form-data">
             <div class="mb-3 row">
               <label for="inputTitle" class="col-sm-2 col-form-label"></label>
@@ -68,8 +68,12 @@ $product = $_products->edit();
             <div class="mb-3 row">
               <label for="formFile" class="col-sm-2 col-form-label">Picture:</label>
               <div class="col-sm-10">
-                <input class="form-control" type="file" id="formFile" name="picture" value="<?= $product['picture']; ?>">
-                <p><img src="<?= $webroot; ?>uploads/<?= $product['pictures']; ?>" alt="" height="100" width="100"></p>
+                <input class="form-control" type="file" id="formFile" name="picture" value="<?= $product['pictures']; ?>">
+                <img src="<?= $webroot; ?>uploads/<?= $product['pictures']; ?>">
+                  <input
+                          type="hidden"
+                          name="old_picture"
+                          value="<?=$product['pictures'];?>">
               </div>
             </div>
             <button type="Submit" class="btn btn-primary">Update</button>
