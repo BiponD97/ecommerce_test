@@ -247,10 +247,22 @@ class Banners
     }
 
     //Active Status Products
-    public function getActiveProducts()
+    public function getActiveBanners()
     {
         $_startFrom = 0;
         $_total = 4;
+        $query = "SELECT * FROM `banners` where is_active = 1 LIMIT $_startFrom, $_total";
+        $stmt = $this->conn->prepare($query);
+        $result = $stmt->execute();
+
+        $banners = $stmt->fetchAll();
+        return $banners;
+
+    }
+    public function getActiveSliders()
+    {
+        $_startFrom = 0;
+        $_total = 3;
         $query = "SELECT * FROM `banners` where is_active = 1 LIMIT $_startFrom, $_total";
         $stmt = $this->conn->prepare($query);
         $result = $stmt->execute();

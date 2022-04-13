@@ -4,7 +4,7 @@ use App\Products;
 
 $_products = new Products();
 $products = $_products->getActiveProducts();
-var_dump($products);
+//var_dump($products);
 ?>
 
 <section class="feature">
